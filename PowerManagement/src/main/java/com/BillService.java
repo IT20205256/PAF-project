@@ -33,7 +33,7 @@ public class BillService {
 	public String insertBill(@FormParam("accountNo") String accountNo,
 			@FormParam("name") String name, @FormParam("address") String address, 
 			@FormParam("month") String month,
-			@FormParam("current_reading") Integer current_reading, @FormParam("previous_reading") Integer previous_reading) {
+			@FormParam("current_reading") String current_reading, @FormParam("previous_reading") String previous_reading) {
 		String output = BillObj.insertBill(accountNo, name, address, month, current_reading, previous_reading);
 		return output;
 	}

@@ -21,12 +21,8 @@
 					MONTH:<br> <input name="month" type="text" placeholder="Enter the Tariff_Block" required><br> 
 					CURRENT READING:<br> <input name="current_reading" type="text" placeholder="Enter Charge Per Unit" required><br> 
 					PREVIOUS READING:<br> <input name="previous_reading" type="text" placeholder="Enter Consumer Type" required><br>
-					CONSUMED UNITS:<br> <input name="consumed_units" type="text" placeholder="Enter the Tariff_Block" required><br> 
-					TOTAL:<br> <input name="total" type="text" placeholder="Enter Charge Per Unit" required><br> 
-					DUE:<br> <input name="due" type="text" placeholder="Enter Consumer Type" required><br> 
-					STATUS:<br> <input name="status" type="text" placeholder="Enter Consumer Type" required><br>
 					<br>  
-					<input name="btnSubmit" type="submit" value="Create" class="btn btn-primary">
+					<input name="btnSubmit" type="submit" value="Generate Bill" class="btn btn-primary">
 				</form>
 
 				<%

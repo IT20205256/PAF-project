@@ -5,13 +5,9 @@
 <%
 //insert item..........................
 if (request.getParameter("accountNo") != null) {
-	Bill BillObj = new Bill();
-	BillObj.connect();
+	Bill billObj = new Bill();
 
-	String stsMsg = BillObj.insertBill(request.getParameter("accountNo"), request.getParameter("name"),
-	request.getParameter("address"), request.getParameter("month"), request.getParameter("current_reading"),
-	request.getParameter("previous_reading"), request.getParameter("consumed_units"),
-	request.getParameter("total"), request.getParameter("due"), request.getParameter("status"));
+	String stsMsg = billObj.insertBill(request.getParameter("accountNo"), request.getParameter("name"), request.getParameter("address"), request.getParameter("month"), request.getParameter("current_reading"), request.getParameter("previous_reading"));
 
 	session.setAttribute("ststusMsg", stsMsg);
 }
@@ -21,6 +17,7 @@ if (request.getParameter("accountNo") != null) {
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="Views/bootstrap.min.css">
 </head>
 <body>
 	<%
@@ -29,7 +26,7 @@ if (request.getParameter("accountNo") != null) {
 	%>
 
 	<a href="billAdd.jsp">
-		<button class="button">GENERATE BILL</button>
+		<button class="btn btn-primary">GENERATE BILL</button>
 	</a>
 </body>
 </html>

@@ -20,7 +20,7 @@ if (request.getParameter("Unit_Record_Id") != null) {
 </head>
 <body>
 <%
-    String redirectURL = "http://localhost:8090/PowerManagement/billAdd.jsp";
+    String redirectURL = "http://localhost:8090/PowerManagement/unitAdd.jsp";
     response.sendRedirect(redirectURL);
 %>
 </body>

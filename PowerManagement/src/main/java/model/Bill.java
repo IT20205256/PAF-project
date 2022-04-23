@@ -23,10 +23,10 @@ public class Bill {
 
 	// Insert Details...............................
 
-	public String insertBill(String accountNo, String name, String address, String month, Integer current_reading,Integer previous_reading) {
+	public String insertBill(String accountNo, String name, String address, String month, String current_reading,String previous_reading) {
 
 		String output = "";
-		Integer consumed_units = current_reading - previous_reading;
+		Integer consumed_units = Integer.parseInt(current_reading) - Integer.parseInt(previous_reading);
 		Double due = 0.00;
 
 		try {
@@ -71,8 +71,8 @@ public class Bill {
 			preparedStmt.setString(3, name);
 			preparedStmt.setString(4, address);
 			preparedStmt.setString(5, month);
-			preparedStmt.setInt(6, current_reading);
-			preparedStmt.setInt(7, previous_reading);
+			preparedStmt.setInt(6, Integer.parseInt(current_reading));
+			preparedStmt.setInt(7, Integer.parseInt(previous_reading));
 			preparedStmt.setInt(8, (consumed_units));
 			preparedStmt.setDouble(9, total);
 			preparedStmt.setDouble(10, due);
@@ -107,10 +107,9 @@ public class Bill {
 			}
 
 			// Prepare the html table to be displayed
-			output = "<table border='1'><tr><th>Bill No</th>" + "<th>Account No</th><th>Name</th>"
-					+ "<th>Address</th><th>Month</th>" + "<th>Current Reading</th><th>Previous Reading</th>"
-					+ "<th>Consumed Unit</th><th>Total</th>" + "<th>Due</th><th>Status</th>"
-					+ "<th>Update</th><th>Remove</th></tr>";
+			output = "<table class='table' border='1'><tr><th scope='col'>Bill No</th>" + "<th scope='col'>Account No</th><th scope='col'>Name</th>"
+					+ "<th scope='col'>Address</th><th>Month</th>" + "<th scope='col'>Current Reading</th><th scope='col'>Previous Reading</th>"
+					+ "<th scope='col'>Consumed Unit</th><th scope='col'>Total</th>" + "<th scope='col'>Due</th><th scope='col'>Status</th></tr>";
 
 			String query = "select * from bill";
 			Statement stmt = con.createStatement();
@@ -141,14 +140,8 @@ public class Bill {
 				output += "<td>" + consumed_units + "</td>";
 				output += "<td>" + total + "</td>";
 				output += "<td>" + due + "</td>";
-				output += "<td>" + status + "</td>";
+				output += "<td>" + status + "</td></tr>";
 
-				// buttons
-				output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
-						+ "<td><form method='post' action='billAdd.jsp'>"
-						+ "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>";
-				// + "<input name='itemID' type='hidden' value='" + Unit_Record_Id + "'>" +
-				// "</form></td></tr>";
 			}
 
 			con.close();
