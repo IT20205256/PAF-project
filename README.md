@@ -15,7 +15,7 @@ Team Members :
 1. IT20202736 - Udeshi Withanage (Leader)
 2. IT20205188 - Navodya Senarathne
 3. IT20201678 - Nethma Rajapaksha
-4. IT20202668 - Heisapirashoban .N
+4. IT20202668 - Heisapirashoban.N
 5. IT20205256 - Kishan .R
 
 Development Environments Download Links Eclipse: (Newer Versions May Not Support) https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2019-09/R/eclipse-jee-2021-12-R-win32-x86_64.zip 
