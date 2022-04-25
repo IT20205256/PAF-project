@@ -80,8 +80,7 @@ public class paymentMethod {
 						if (con == null) {
 							return "Error while connecting to the database for reading";
 						}
-						
-						//check from here..................................
+
 						// Prepare the html table to be displayed
 						output = "<table class='table' border='1'><tr><th scope='col'>Payment Type</th>" + "<th scope='col'>Name on Card</th scope='col'><th scope='col'>Card Number</th>"
 								+ "<th scope='col'>Expiration Date</th>" + "<th scope='col'>Update</th><th scope='col'>Remove</th></tr>";
@@ -251,7 +250,6 @@ public class paymentMethod {
 
 				
 				//UPDATE exp date or the cvv of a card
-				//String type, String number, String date, String cvv, String name, String cardName
 				public String updateMethod(String ID, String date, String cvv) {
 					String output = "";
 
@@ -263,7 +261,6 @@ public class paymentMethod {
 						}
 
 						// create a prepared statement
-						//`ID`,`paymentType`,`cardNumber`,`expDate`,`cvv`,`cardHolderName`,`nameOnCard`
 						String query = "UPDATE paymentMethod SET expDate=?,cvv=? WHERE ID=?";
 						PreparedStatement preparedStmt = con.prepareStatement(query);
 						

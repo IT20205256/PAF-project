@@ -25,7 +25,7 @@ public class payment {
 				return con;
 			}
 
-			//checked
+			//insert method
 			public String insertMethod(String bill_no, String name, String amount_paying) {
 
 				String output = "";
@@ -85,7 +85,6 @@ public class payment {
 			}
 
 			//get all payment history of a PARTICULAR user
-			//checked
 			public String getPaymentHistory(String account) {
 
 				String output = "";
@@ -97,7 +96,6 @@ public class payment {
 						return "Error while connecting to the database for reading";
 					}
 
-					// check from here..................................
 					// Prepare the html table to be displayed
 					output = "<table class='table' border='1'><tr><th scope='col'>Bill No</th>" + "<th scope='col'>Amount Paid</th><th scope='col'>Date & Time</th>"
 							+ "<th scope='col'>Name</th>";
@@ -107,8 +105,6 @@ public class payment {
 					ResultSet rs = stmt.executeQuery(query);
 
 					while (rs.next()) {
-
-						//String ID = Integer.toString(rs.getInt("ID"));
 						String bill_no = rs.getString("bill_no");
 						String amount_paying = rs.getString("amount_paying");
 						String date = rs.getString("date");
@@ -137,7 +133,6 @@ public class payment {
 			}
 			
 			//get all the bills of a PARTICULAR user
-			//checked
 			public String getAllBills(String account) {
 
 				String output = "";
@@ -149,7 +144,6 @@ public class payment {
 						return "Error while connecting to the database for reading";
 					}
 
-					// check from here..................................
 					// Prepare the html table to be displayed
 					output = "<table class='table' border='1'><tr><th scope='col'>Bill No</th>" + "<th scope='col'>Account No</th><th scope='col'>Total Amount</th>"
 							+"<th scope='col'>Due Amount</th><th scope='col'>Status</th>"+"<th scope='col'>Pay Bill</th></tr>";
@@ -251,7 +245,6 @@ public class payment {
 
 
 			// All payment details for all users --For ADMIN
-			//checked
 			public String allPayment() {
 				String output = "";
 
@@ -262,7 +255,6 @@ public class payment {
 						return "Error while connecting to the database for reading";
 					}
 
-					// check from here..................................
 					// Prepare the html table to be displayed
 					output = "<table class='table' border='1'><tr><th scope='col'>Bill No</th>" + "<th scope='col'>Amount Paid</th><th scope='col'>Date & Time</th>"
 							+ "<th scope='col'>Name</th></tr>";
@@ -271,7 +263,6 @@ public class payment {
 					Statement stmt = con.createStatement();
 					ResultSet rs = stmt.executeQuery(query);
 
-					// `ID`,`paymentType`,`cardNumber`,`expDate`,`cvv`,`cardHolderName`,`nameOnCard`
 					// iterate through the rows in the result set
 					while (rs.next()) {
 						//String ID = Integer.toString(rs.getInt("ID"));
@@ -303,7 +294,6 @@ public class payment {
 			}
 
 			// update to bill table for due amount and status after paying
-			//checked
 			public String updateMethod(String bill_no, Double due) {
 				String output = "";
 				String status = "";
@@ -321,9 +311,6 @@ public class payment {
 						return "Error while connecting to the database for updating.";
 					}
 
-					// create a prepared statement
-					// `ID`,`paymentType`,`cardNumber`,`expDate`,`cvv`,`cardHolderName`,`nameOnCard`
-					// UPDATE payment.bills SET due=1000.00,status="Half Paid" WHERE bill_no=4;
 					String query = "UPDATE bill SET due=?,status=? WHERE billNo=?";
 					PreparedStatement preparedStmt = con.prepareStatement(query);
 
