@@ -144,11 +144,8 @@ public class Bill {
 				output += "<td>" + status + "</td>";
 
 				// buttons
-				output += //"<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
-						 "<td><form method='post' action='billAdd.jsp'>";
-						//+ "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>";
-				// + "<input name='itemID' type='hidden' value='" + Unit_Record_Id + "'>" +
-				// "</form></td></tr>";
+				output += "<td><form method='post' action='billAdd.jsp'>";
+						
 			}
 
 			con.close();
