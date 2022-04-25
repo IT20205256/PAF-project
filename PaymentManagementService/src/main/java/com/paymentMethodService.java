@@ -52,12 +52,8 @@ public class paymentMethodService {
 		JsonObject methodObject = new JsonParser().parse(methodData).getAsJsonObject();
 		// Read the values from the JSON object
 		String ID = methodObject.get("ID").getAsString();
-		//String type = methodObject.get("type").getAsString();
-		//String number = methodObject.get("number").getAsString();
 		String date = methodObject.get("date").getAsString();
 		String cvv = methodObject.get("cvv").getAsString();
-		//String name = methodObject.get("name").getAsString();
-		//String cardName = methodObject.get("cardName").getAsString();
 		String output = methodObj.updateMethod(ID, date, cvv);
 		return output;
 	}
@@ -75,17 +71,11 @@ public class paymentMethodService {
 		return output;
 	}
 	
-	//searchMethod
-	
 	@GET
 	@Path("/{account}")
 	@Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.TEXT_HTML)
 	public String searchMethod(@PathParam("account") String account) {
-		// Convert the input string to an XML document
-		//Document doc = Jsoup.parse(methodData, "", Parser.xmlParser());
-		// Read the value from the element <itemID>
-		//String ID = doc.select("ID").text();
 		String output = methodObj.searchMethod(account);
 		return output;
 	}
