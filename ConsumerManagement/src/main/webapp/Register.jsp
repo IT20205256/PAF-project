@@ -24,10 +24,6 @@
 					<input name="btnSubmit" type="submit" value="Create" class="btn btn-primary">
 				</form>
 
-				<%
-				//out.print(session.getAttribute("statusMsg"));
-				%>
-
 				<br>
 
 
