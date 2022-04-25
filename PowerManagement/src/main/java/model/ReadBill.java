@@ -32,7 +32,6 @@ public class ReadBill {
 					return "Error while connecting to the database for reading";
 				}
 
-				// check from here..................................
 				// Prepare the html table to be displayed
 				output = "<table class='table' border='1'><tr><th scope='col'>Bill No</th>" + "<th scope='col'>Account No</th><th scope='col'>User Name</th>"
 						+"<th scope='col'> Consumed Units</th><th scope='col'> Monthly Bill Amount</th><th scope='col'>Month</th></tr>";
