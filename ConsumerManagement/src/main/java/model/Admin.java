@@ -51,8 +51,6 @@ public class Admin {
 					String address = rs.getString("address");
 					String phone = rs.getString("phone");
 					String email = rs.getString("email");
-					//String username = rs.getString("username");
-					//String password = rs.getString("password");
 
 					// Add new row to the html table
 					output += "<tr><td>" + account_no + "</td>"; 
@@ -60,8 +58,6 @@ public class Admin {
 					output += "<td>" + address + "</td>";
 					output += "<td>" + phone + "</td>";
 					output += "<td>" + email + "</td>";
-					//output += "<td>" + username + "</td>";
-					//output += "<td>" + password + "</td>";
 
 					// buttons
 					output +="<td><form method='post' action='consumerDelete.jsp'>"
@@ -144,8 +140,6 @@ public class Admin {
 					String address = rs.getString("address");
 					String phone = rs.getString("phone");
 					String email = rs.getString("email");
-					//String username = rs.getString("username");
-					//String password = rs.getString("password");
 
 					// Add new row to the html table
 					output += "<tr><td>" + uaccount_no + "</td>";
@@ -153,8 +147,6 @@ public class Admin {
 					output += "<td>" + address + "</td>";
 					output += "<td>" + phone + "</td>";
 					output += "<td>" + email + "</td>";
-					//output += "<td>" + username + "</td>";
-					//output += "<td>" + password + "</td>";
 
 					// buttons
 					output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
