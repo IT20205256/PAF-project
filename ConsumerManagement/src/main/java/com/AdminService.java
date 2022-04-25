@@ -31,10 +31,6 @@ public class AdminService {
 	@Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.TEXT_HTML)
 	public String searchMethod(@PathParam("account") String account) {
-		// Convert the input string to an XML document
-		//Document doc = Jsoup.parse(methodData, "", Parser.xmlParser());
-		// Read the value from the element <itemID>
-		//String ID = doc.select("ID").text();
 		String output = consumerObj.getAccount(account);
 		return output;
 	}
