@@ -68,7 +68,7 @@ public class Register {
 
 	}
 	
-	//*************************************For Login input************************
+	//For Login input
 	public String insertLogin (String email) {
 		String output="";
 		String account_no="", uemail="", username="", password="";
@@ -115,10 +115,10 @@ public class Register {
 		return output;
 		
 	}
-	//*********************************************************************
 	
 	
-	//****************************************************Validate		
+	
+	//Validate		
 			public String validate(String username, String password) {
 				
 				String output = "";
@@ -136,7 +136,6 @@ public class Register {
 					ResultSet rs = stmt.executeQuery(query);
 
 					while (rs.next()) {
-						//int account = rs.getInt("account_no");
 						username = rs.getString("username");
 						password = rs.getString("password");
 						email = rs.getString("email");
@@ -160,7 +159,7 @@ public class Register {
 				
 			}
 			
-	//****************************************************************************************************
+	
 
 	// Read Details...............................
 
@@ -207,8 +206,6 @@ public class Register {
 				output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
 						+ "<td><form method='post' action='Register.jsp'>"
 						+ "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>";
-				// + "<input name=' account_no ' type='hidden' value='" + account_no + "'>" +
-				// "</form></td></tr>";
 			}
 
 			con.close();
