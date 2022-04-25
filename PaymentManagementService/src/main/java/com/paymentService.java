@@ -28,10 +28,6 @@ public class paymentService {
 	@Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.TEXT_HTML)
 	public String searchMethod(@PathParam("account") String account) {
-		// Convert the input string to an XML document
-		//Document doc = Jsoup.parse(methodData, "", Parser.xmlParser());
-		// Read the value from the element <itemID>
-		//String ID = doc.select("ID").text();
 		String output = methodObj.getPaymentHistory(account);
 		return output;
 	}
@@ -41,10 +37,6 @@ public class paymentService {
 	@Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.TEXT_HTML)
 	public String viewBills(@PathParam("account") String account) {
-		// Convert the input string to an XML document
-		//Document doc = Jsoup.parse(methodData, "", Parser.xmlParser());
-		// Read the value from the element <itemID>
-		//String ID = doc.select("ID").text();
 		String output = methodObj.getAllBills(account);
 		return output;
 	}
@@ -57,5 +49,6 @@ public class paymentService {
 		String output = methodObj.insertMethod(bill_no, name, amount_paying);
 		return output;
 	}
+	
 
 }
