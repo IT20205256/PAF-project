@@ -109,7 +109,8 @@ public class Bill {
 			// Prepare the html table to be displayed
 			output = "<table class='table' border='1'><tr><th scope='col'>Bill No</th>" + "<th scope='col'>Account No</th><th scope='col'>Name</th>"
 					+ "<th scope='col'>Address</th><th>Month</th>" + "<th scope='col'>Current Reading</th><th scope='col'>Previous Reading</th>"
-					+ "<th scope='col'>Consumed Unit</th><th scope='col'>Total</th>" + "<th scope='col'>Due</th><th scope='col'>Status</th></tr>";
+					+ "<th scope='col'>Consumed Unit</th><th scope='col'>Total</th>" + "<th scope='col'>Due</th><th scope='col'>Status</th>"
+					;
 
 			String query = "select * from bill";
 			Statement stmt = con.createStatement();
@@ -140,8 +141,14 @@ public class Bill {
 				output += "<td>" + consumed_units + "</td>";
 				output += "<td>" + total + "</td>";
 				output += "<td>" + due + "</td>";
-				output += "<td>" + status + "</td></tr>";
+				output += "<td>" + status + "</td>";
 
+				// buttons
+				output += //"<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
+						 "<td><form method='post' action='billAdd.jsp'>";
+						//+ "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>";
+				// + "<input name='itemID' type='hidden' value='" + Unit_Record_Id + "'>" +
+				// "</form></td></tr>";
 			}
 
 			con.close();
