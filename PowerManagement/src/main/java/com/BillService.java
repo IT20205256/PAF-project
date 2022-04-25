@@ -25,7 +25,8 @@ public class BillService {
 	public String readBill() {
 		return BillObj.readBill();
 	}
-
+	
+	
 	@POST
 	@Path("/")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
