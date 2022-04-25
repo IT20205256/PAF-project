@@ -2,18 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-<%
-//Delete item----------------------------------
-/*if (request.getParameter("account_no") != null) {
-	Register consumerObj = new Register();
-	String stsMsg = consumerObj.deleteDetail(request.getParameter("email"));
-	session.setAttribute("statusMsg", stsMsg);
-}*/
-%>
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
