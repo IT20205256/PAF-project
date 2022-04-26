@@ -131,3 +131,33 @@ insert into power.unit_management values(0,'63-92',15.85, 'General Purpose');
 insert into power.unit_management values(0,'92-102',27.00, 'General Purpose');
 
 
+
+/*Customer service management service*/
+DROP TABLE IF EXISTS customer;
+CREATE TABLE `world`.`customer` (
+  `Id` INT NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(45) NULL,
+  `Address` VARCHAR(45) NULL,
+  `Issue` VARCHAR(45) NULL,
+  `TelNo` VARCHAR(45) NULL,
+  `Status` VARCHAR(45) NULL,
+  PRIMARY KEY (`Id`));
+  
+  insert into customer values(0,"Kishan", "Batticaloa", "Meter was not working for few days","0769386347","Not repaired");
+  insert into customer values(0,"Heisho", "Malabe", "Meter was damaged", "0759485968", "Not repaired");
+  insert into customer values(0,"Udeshi", "Kaduwela", "Meter has measuring problems", "0779685986", "Not Repaired");
+  
+/*Feedback Service*/  
+DROP TABLE IF EXISTS feedback;
+CREATE TABLE `world`.`feedback` (
+  `FeedId` INT NOT NULL AUTO_INCREMENT,
+  `RepairId` VARCHAR(45) NULL,
+  `Rate` VARCHAR(45) NULL,
+  `Feedback` VARCHAR(45) NULL,
+  PRIMARY KEY (`FeedId`));
+  
+  insert into feedback values(0, "2", "Good", "The service was good");
+  insert into feedback values(0, "3", "Excellenct", "I am satisfied by your service");
+  insert into feedback values(0, "1", "Average", "Your service was better but you could improve your timing");
+
+
