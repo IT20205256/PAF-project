@@ -87,3 +87,47 @@ INSERT INTO login VALUES (20228541,'DS0309','Navodya@94','navodya@gmail.com');
 INSERT INTO login VALUES (20228542,'SE0405','Udeshi@96','udeshi@gmail.com');
 INSERT INTO login VALUES (20228543,'IT1012','Saduni@20','saduni@gmail.com');
 
+/*****************POWER MANAGEMENT SERVICE***********/
+/*DROP TABLE IF EXISTS*/
+DROP TABLE IF EXISTS BILL;
+/*CREATE TABLE FOR BILL*/
+CREATE TABLE bill (
+billNo integer auto_increment primary key,
+accountNo integer,
+name varchar(45),
+address varchar(45),
+month varchar(10),
+current_reading integer,
+previuos_reading integer,
+consumed_units integer,
+total decimal(10,2),
+due decimal(10,2),
+status varchar(45)
+);
+
+/*INSERT INTO TABLE BILL*/
+insert into bill values (0, '20228450','P.M. Mendis', 'Malabe','May', 456789,456759,30,235.50,235.50,'unpaid');
+insert into bill values (0, '20228451','R.A. Perera', 'Gampaha', 'June',234567,234498,69,658.35,658.35,'unpaid');
+insert into bill values (0, '20228452','N.M. Silva', 'Urapola', 'June', '200.00',234567,234500,628.35,628.35,'unpaid');
+insert into bill values (0, '20228453','H.S. Costa', 'Walpola', 'May',456362,456293,69,658.35,658,35,'unpaid');
+
+/*****************UNIT MANAGEMENT SERVICE*********/
+
+/*DROP TABLE IF EXISTS*/
+DROP TABLE IF EXISTS unit_managemnt;
+/*CREATE TABLE FOR UNIT MANAGEMENT*/
+CREATE TABLE unit_management (
+Unit_Record_Id integer auto_increment primary key,
+Tariff_Block varchar(30),
+Charge_per_Unit decimal(5,2),
+Type varchar(45)
+);
+
+/*INSERT INTO TABLE UNIT MANAGEMENT */
+
+insert into power.unit_management values(0,'0-31',7.85, 'General Purpose');
+insert into power.unit_management values(0,'32-62',10.00, 'General Purpose');
+insert into power.unit_management values(0,'63-92',15.85, 'General Purpose');
+insert into power.unit_management values(0,'92-102',27.00, 'General Purpose');
+
+
