@@ -131,8 +131,8 @@ insert into power.unit_management values(0,'63-92',15.85, 'General Purpose');
 insert into power.unit_management values(0,'92-102',27.00, 'General Purpose');
 
 
-
-/*Customer service management service*/
+  
+  /*Customer service management service*/
 DROP TABLE IF EXISTS customer;
 CREATE TABLE `world`.`customer` (
   `Id` INT NOT NULL AUTO_INCREMENT,
@@ -159,5 +159,40 @@ CREATE TABLE `world`.`feedback` (
   insert into feedback values(0, "2", "Good", "The service was good");
   insert into feedback values(0, "3", "Excellenct", "I am satisfied by your service");
   insert into feedback values(0, "1", "Average", "Your service was better but you could improve your timing");
+
+
+
+/***************** SERVICE *********/
+/*Staff management service*/
+DROP TABLE IF EXISTS staff;
+CREATE TABLE `world`.`staff` (
+  `StaffId` INT NOT NULL AUTO_INCREMENT,
+  `StaffName` CHAR(30) NULL,
+  `JobTitle` CHAR(30) NULL,
+  `StaffMail` VARCHAR(100) NULL,
+  `StaffContact` integer(11) NULL,
+  `StaffGender` CHAR(6) NULL,
+  `Salary` VARCHAR(45) NULL,
+  PRIMARY KEY (`StaffId`));
+  
+  insert into staff values(0,"Heisapirashoban", "Chief Manager", "heisapirashoban@gmail.com","0776112233","Male","100000");
+  insert into staff values(0,"Heisho", "Clerk", "heisho123@gmail.com", "0776112233", "Male", "50000");
+  insert into staff values(0,"Kishan", "Manager", "kishan@gmail.com", "0765645623", "Male", "75000");
+  
+/*Staff login Service*/  
+DROP TABLE IF EXISTS stafflogin;
+CREATE TABLE `world`.`feedback` (
+  `StaffID` INT NOT NULL AUTO_INCREMENT,
+  `StaffMail` VARCHAR(45) NULL,
+  `Pasword` VARCHAR(45) NULL,
+  PRIMARY KEY (`StaffID`));
+  
+  insert into stafflogin values(0, "heisapirashoban@gmail.com", "heisapirashoban");
+  insert into stafflogin values(0, "heisho123@gmail.com", "heisho123");
+  insert into stafflogin values(0, "kishan@gmail.com", "kishan");
+  
+  
+  
+  
 
 
